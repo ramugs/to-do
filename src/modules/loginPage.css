@@ -1,0 +1,20 @@
+.loginPage_conatiner {
+  width: 100vw;
+  /* height: 100vh; */
+  background: radial-gradient(circle at center, #a5a5a7 10%, #111 90%);
+}
+.loding_conatiner {
+  margin: 0% 20% 0% 20%;
+}
+/* .welcome_text {
+  background: linear-gradient(to right, #fff, #111);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+} */
+
+@media only screen and (max-width: 576px) {
+  .loding_conatiner {
+    margin: 0% 10% 0% 10%;
+  }
+}
