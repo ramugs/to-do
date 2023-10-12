@@ -3,7 +3,6 @@ import { url } from "../redux/config";
 import { nomralApiCall } from "../components/helper";
 import { useNavigate } from "react-router-dom";
 import "./loginPage.css";
-import { dummyData } from "../components/data";
 const LoginPage = () => {
   const [loading, setLoading] = useState(false);
   const [allUserDetails, setAllUserDetails] = useState([]);
@@ -15,6 +14,8 @@ const LoginPage = () => {
     isPassWord: "",
     inValidPassword: "",
   });
+  console.log(loading);
+  console.log(error);
   const [createNewError, setCreateNewError] = useState("");
 
   const [newAccountData, setNewAccountData] = useState({
@@ -78,16 +79,15 @@ const LoginPage = () => {
   function createInputDeatilsFn(name, value) {
     let data = { [name]: value };
     setNewAccountData({ ...newAccountData, ...data });
-    
   }
 
   function handleSubmit(e) {
     e.preventDefault();
     const userPresent = allUserDetails?.data?.find(
-      (item) => item?.userDetails?.userName == userEntryData?.userName
+      (item) => item?.userDetails?.userName === userEntryData?.userName
     );
     const isPassWord = allUserDetails?.data?.find(
-      (item) => item?.userDetails?.password == userEntryData?.password
+      (item) => item?.userDetails?.password === userEntryData?.password
     );
     let errorMessage = {
       isUserName: "",
@@ -117,7 +117,7 @@ const LoginPage = () => {
   function handleCreateSubmit(e) {
     e.preventDefault();
     const userPresent = allUserDetails?.data?.find(
-      (item) => item?.userDetails?.userName == newAccountData?.userName
+      (item) => item?.userDetails?.userName === newAccountData?.userName
     );
     console.log(userPresent, "jasdhsfsdfja");
     if (!newAccountData?.name) {
@@ -132,7 +132,6 @@ const LoginPage = () => {
       postFn();
     }
   }
-  console.log(createNewError, "jasdhsfsdfja");
   return (
     <div className="loginPage_conatiner ">
       <div className="row gx-0">

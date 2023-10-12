@@ -26,6 +26,7 @@ const SettingPage = () => {
       <div className="col-4">
         <div className="d-flex justify-content-center mt-5 ">
           <img
+            alt="image"
             src={DefaultImage}
             width="200px"
             height="200px"
