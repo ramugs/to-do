@@ -78,6 +78,7 @@ const LoginPage = () => {
   function createInputDeatilsFn(name, value) {
     let data = { [name]: value };
     setNewAccountData({ ...newAccountData, ...data });
+    
   }
 
   function handleSubmit(e) {
