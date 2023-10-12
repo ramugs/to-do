@@ -78,7 +78,7 @@ const LoginPage = () => {
   function createInputDeatilsFn(name, value) {
     let data = { [name]: value };
     setNewAccountData({ ...newAccountData, ...data });
-
+    
   }
 
   function handleSubmit(e) {
@@ -133,7 +133,6 @@ const LoginPage = () => {
     }
   }
   console.log(createNewError, "jasdhsfsdfja");
-  
   return (
     <div className="loginPage_conatiner ">
       <div className="row gx-0">
