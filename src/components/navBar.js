@@ -20,7 +20,7 @@ const NavBar = () => {
     <>
       <nav className="navbar navbar-expand-lg  light_black_bg navbar_container">
         <div className="container-fluid d-flex justify-content-between align-items-center">
-          <a className="navbar-brand" href="/home-page">
+          <a className="navbar-brand" href="/">
             {userName}
           </a>
 

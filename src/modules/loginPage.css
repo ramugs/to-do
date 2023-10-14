@@ -6,6 +6,9 @@
 .loding_conatiner {
   margin: 0% 20% 0% 20%;
 }
+.loginPage_innerText{
+  background: radial-gradient(circle at center, #a5a5a7 10%, #111 90%);
+}
 /* .welcome_text {
   background: linear-gradient(to right, #fff, #111);
   -webkit-background-clip: text;

@@ -42,11 +42,13 @@ const LoginPage = () => {
 
   const newUserData = {
     userDetails: {
-      name: newAccountData?.name,
       userName: newAccountData?.userName,
+      name: newAccountData?.name,
       password: newAccountData?.password,
-      dob: "",
-      profilePic: "",
+      profile_pic: "",
+      DOB: "",
+      gender: "",
+      about_yourself: "",
     },
     musicDetails: {},
     todayDetails: {},
@@ -137,13 +139,11 @@ const LoginPage = () => {
       <div className="row gx-0">
         <div className="col-md-6">
           <div className="d-flex justify-content-center align-items-center h_full h_md_50 px-5">
-            <div className="d-flex flex-column text-center black_color">
-              <span className="fs_26 fw_500">
-                Welcome to Your Personal To-Do List
-              </span>
-              <span className="fs_24 fw_500">
-                Stay organized, be productive, and achieve your goals!
-              </span>
+            <div
+              className="d-flex justify-content-center align-items-center black_color border_radius_50per loginPage_innerText"
+              style={{ height: "300px", width: "300px" }}
+            >
+              <span className="fs_26 fw_500">Welcome to Your App</span>
             </div>
           </div>
         </div>
@@ -285,15 +285,15 @@ const LoginPage = () => {
                   </form>
                 </>
               )}
-              <div className="text-end mt-3">
+              <div className="text-end mt-4">
                 <button
                   className="fs_16 fw_500 white_color background_none border_none"
                   type="button"
                   onClick={() => {
-                    setCreateNewAcoount(true);
+                    setCreateNewAcoount(!createNewAcoount);
                   }}
                 >
-                  Create New Account
+                  {createNewAcoount ? "Login In ?" : "Create New Account ?"}
                 </button>
               </div>
             </div>

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import DefaultImage from "../assests/images/defaultImage.png";
 import { useDispatch, useSelector } from "react-redux";
 import { findOneUser } from "../redux/actions/getActions";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 const SettingPage = () => {
   const disptach = useDispatch();
@@ -18,6 +20,31 @@ const SettingPage = () => {
   const onError = (data) => {
     console.log(data, "asddsd");
   };
+
+  const formik = useFormik({
+    initialValues: {
+      userName: "",
+      name: "",
+      profile_pic: "",
+      DOB: "",
+      gender: "",
+      password: "",
+      about_yourself: "",
+    },
+
+    validationSchema: Yup.object({
+      userName: Yup.string().required("required"),
+      name: Yup.string().required("required"),
+      profile_pic: Yup.string().required("required"),
+      DOB: Yup.string().required("required"),
+      gender: Yup.string().required("required"),
+      password: Yup.string().required("required"),
+    }),
+
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
 
   console.log("ksjhdkjas");
 
